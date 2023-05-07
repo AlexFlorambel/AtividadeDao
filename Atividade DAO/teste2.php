@@ -44,6 +44,7 @@ if(isset($_POST['new'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -51,16 +52,16 @@ if(isset($_POST['new'])){
 <h1>Cadastro</h1>
 
 <form action="" method='post'>
-    <label for="nome">Nome e Sobrenome</label>
+    <label for="nome">Nome e Sobrenome:</label>
     <input type="text" id='nome' name='nome'>
     <br>
-    <label for="email">Email</label>
-    <input type="text" id='email' name='email'>
+    <label for="email">Email:</label>
+    <input type="email" id='email' name='email' required placeholder="seuemail@dominio.com">
     <br>
-    <label for="telefone">Telefone</label>
-    <input type="text" id='telefone' name='telefone'>
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id='telefone' name='telefone' required >
     <br>
-    <input type="submit" value='Cadastrar' name='new'>
+    <input type="submit" value='Cadastrar' name='new' class="cadastro">
 </form>
 </div>
 
@@ -72,7 +73,7 @@ if(isset($_POST['new'])){
     <label for="id">ID</label>
     <input type="text" id='id' name='id'>
 
-    <input type="submit" value='Localizar' name='acharid'>
+    <input type="submit" value='Localizar' name='acharid' class="cadastro">
 </form>
 
 <?php
@@ -120,7 +121,7 @@ if(isset($_POST['new'])){
         <label for="up_tel">Telefone</label>
         <input type="text" id="up_tel" name="up_tel">
         <br>
-        <input type="submit" value="Atualizar dados" name="update_button">
+        <input type="submit" value="Atualizar dados" name="update_button" class="cadastro">
     </form>
 
     <?php
@@ -145,7 +146,7 @@ if(isset($_POST['new'])){
     <form action="" method='post'>
         <label for="">ID</label>
         <input type="text" id='del_id' name='del_id'>
-        <input type="submit" value='Excluir cadastro' name='del_button'>
+        <input type="submit" value='Excluir cadastro' name='del_button' class="cadastro">
 
     </form>
 

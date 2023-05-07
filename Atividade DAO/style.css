@@ -1,0 +1,49 @@
+div h1{
+  
+    color: blue;
+    text-align: center;
+    
+}
+
+div form{
+    border-style: double;
+    margin: 40px 0;
+    background: beige;
+}
+
+
+
+div form label{
+    display: block;
+    margin: 10px 0 10px;
+    padding: 10px 25px;
+    font-style: italic;
+}
+
+input {
+
+    
+    display: block;
+
+    margin: 0px 10px 10px;
+    padding: auto;
+    width: 50%;
+}
+.cadastro{
+
+    display: block;
+    padding: 5px 0;
+    width: 30%;
+    background: yellow;
+    color: rgb(52, 4, 80);
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.cadastro:hover{
+    background: aquamarine;
+}
