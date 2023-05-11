@@ -43,7 +43,7 @@ if(isset($_POST['new'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atividade Dao</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -160,6 +160,37 @@ if(isset($_POST['new'])){
             echo "Contato deletado com sucesso!";
         }
     ?>
+</div>
+
+<div>
+    <h1>Lista</h1>
+    <?php
+    $listaContato = $tabelaContato->readAll();
+
+    ?>
+        <table border='1'>
+            <tr>
+                <td>id</td>
+                <td>nome</td>
+                <td>email</td>
+                <td>telefone</td>
+            </tr>
+
+    <?php
+    
+    foreach($listaContato as $celula)
+    {
+        echo"<tr>";
+        echo"<td>".$celula['ID']."</td>";
+        echo"<td>".$celula['NOME']."</td>";
+        echo"<td>".$celula['EMAIL']."</td>";
+        echo"<td>".$celula['TELEFONE']."</td>";
+        echo"</tr>";
+    }
+
+    ?>
+
+    </table>
 </div>
     
 

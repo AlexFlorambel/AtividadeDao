@@ -72,9 +72,9 @@ class DaoContato implements iDaoModeCrud {
             $operacao->execute();
 
             $getRow = $operacao->fetch(PDO::FETCH_OBJ);
-            $nome = $getRow->nome;
-            $email = $getRow->email;
-            $telefone = $getRow->telefone;
+            $nome = $getRow->NOME;
+            $email = $getRow->EMAIL;
+            $telefone = $getRow->TELEFONE;
 
             $objeto = new Contato( $nome, $email, $telefone );
             $objeto->setId($id);
@@ -85,6 +85,18 @@ class DaoContato implements iDaoModeCrud {
             echo $excecao->getMessage();
         }
     }
+
+    public function readAll() {
+        $sqlStmt = "SELECT * from {$this->tabela} ORDER BY ID;" ;
+        try {
+           $operacao = $this->instanciaConexaoPdoAtiva->prepare($sqlStmt);
+           $operacao->execute();
+           $linhas = $operacao->fetchAll(PDO::FETCH_ASSOC);
+           return $linhas;
+        } catch( PDOException $excecao ){
+           echo $excecao->getMessage();
+        }
+     }
 
 
     //UPDATE: Atualiza um contato
